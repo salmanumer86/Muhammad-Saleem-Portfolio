@@ -1,4 +1,5 @@
-import { contacts, profile } from "../data/content";
+import { contacts, profile, resume } from "../data/content";
+import { DownloadIcon } from "./Icons";
 
 export default function Hero() {
 	return (
@@ -9,14 +10,22 @@ export default function Hero() {
 					Hi, I'm <span>{profile.name}</span>
 				</h1>
 				<p className="desc">{profile.tagline}</p>
+
+				<a className="resume-btn" href={resume.href} download={resume.downloadAs}>
+					<DownloadIcon />
+					{resume.label}
+				</a>
+
 				<div className="contact-row">
-					{contacts.map(({ icon, label, href, external }) => (
+					{contacts.map(({ Icon, brand, label, href, external }) => (
 						<a
 							key={label}
+							className={`contact-pill brand-${brand}`}
 							href={href}
-							{...(external ? { target: "_blank", rel: "noopener" } : {})}
+							{...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
 						>
-							{icon} {label}
+							<Icon />
+							{label}
 						</a>
 					))}
 				</div>

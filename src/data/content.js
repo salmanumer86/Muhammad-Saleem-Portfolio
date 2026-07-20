@@ -1,3 +1,11 @@
+import {
+	GitHubIcon,
+	GmailIcon,
+	LinkedInIcon,
+	PhoneIcon,
+	WhatsAppIcon,
+} from "../components/Icons";
+
 export const profile = {
 	name: "Saleem",
 	status: "Open to new roles",
@@ -11,17 +19,44 @@ export const profile = {
 	},
 };
 
+// `brand` drives the icon tint; see the .contact-row rules in index.css.
 export const contacts = [
 	{
-		icon: "✉",
+		Icon: GmailIcon,
+		brand: "gmail",
 		label: profile.email,
 		href: `mailto:${profile.email}?subject=Portfolio%20Inquiry&body=Hi%20Saleem%2C%0A%0A`,
 	},
-	{ icon: "🔗", label: "LinkedIn", href: "https://www.linkedin.com/feed/", external: true },
-	{ icon: "⚡", label: "GitHub", href: "https://github.com/mygithubsaleem" },
-	{ icon: "📞", label: "+92 327‑0767029", href: "tel:+923270767029" },
-	{ icon: "💬", label: "WhatsApp", href: "https://wa.me/923270767029", external: true },
+	{
+		Icon: LinkedInIcon,
+		brand: "linkedin",
+		label: "LinkedIn",
+		href: "https://www.linkedin.com/feed/",
+		external: true,
+	},
+	{
+		Icon: GitHubIcon,
+		brand: "github",
+		label: "GitHub",
+		href: "https://github.com/mygithubsaleem",
+		external: true,
+	},
+	{ Icon: PhoneIcon, brand: "phone", label: "+92 327‑0767029", href: "tel:+923270767029" },
+	{
+		Icon: WhatsAppIcon,
+		brand: "whatsapp",
+		label: "WhatsApp",
+		href: "https://wa.me/923270767029",
+		external: true,
+	},
 ];
+
+export const resume = {
+	href: "/resume.pdf",
+	// Filename the browser saves as.
+	downloadAs: "Muhammad-Saleem-Resume.pdf",
+	label: "Download Resume",
+};
 
 export const skillCards = [
 	{
